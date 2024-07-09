@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <!-- external -->
+    <script src="../js/dom.js" defer></script>
+  </head>
+  <body>
+    <div id="static">this is a static file</div>
+
+    <div id="queryID">Lorem ipsum dolor sit amet.</div>
+
+    <div class="queryClass">Lorem ipsum dolor sit amet.</div>
+
+    <div id="container"></div>
+
+    <div id="cats">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+
+    <ul>
+      <li class="box"></li>
+      <li class="box"></li>
+      <li class="box"></li>
+      <li class="box"></li>
+      <li class="box"></li>
+    </ul>
+    <h1 id="vanish">this can vanish</h1>
+
+    <button id="btn">CLick me</button>
+
+    <form id="form" action="">
+      <label for="username">
+        Username
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="john smith"
+        />
+      </label>
+      <br />
+      <label for="password">
+        Password
+        <input type="password" name="password" id="password" /> </label
+      ><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+
+  <style>
+    #static {
+      color: blue;
+    }
+  </style>
+</html>

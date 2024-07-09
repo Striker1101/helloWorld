@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css transform and transition</title>
+  </head>
+  <body>
+    <!-- <div class="box_rotate">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum ipsam
+      laboriosam enim quidem!
+    </div>
+    <div class="box_scale">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, omnis?
+    </div> -->
+    <!-- <div class="box_skew">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, omnis?
+    </div>
+    <div class="box_translate">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam,
+      perspiciatis?
+    </div>
+    <div class="box_origin">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, nemo?
+    </div> -->
+    <!-- <div class="box_transition">Lorem ipsum dolor sit amet.</div>
+    <button class="btn">Click me</button> -->
+    <div class="box_animation">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, quo?
+    </div>
+  </body>
+
+  <style>
+    div {
+      border: 0.1875rem solid red;
+      padding: 0.625rem;
+    }
+    .box_rotate {
+      transform: rotate(65deg);
+    }
+    .box_scale {
+      transform: scale(1, 2);
+    }
+    .box_skew {
+      transform: skewX(25deg);
+    }
+    .box_translate {
+      transform: translate(50px, 100px);
+    }
+    .box_origin {
+      transform: rotate(-25deg);
+      transform-origin: 100% 0%;
+    }
+    /* shorthand transition: property duration timing-function delay; */
+    /* transition-property: property;
+      transition-duration: duration; 
+      transition-timing-function: timing-function;
+      transition-delay: delay; */
+
+    .box_transition {
+      transition-property: color, background-color, width;
+      transition-duration: 2s;
+      transition-timing-function: ease-in ease-in-out;
+      transition-delay: 2s;
+      color: #000000;
+      background-color: #bced91;
+      width: 3rem;
+    }
+
+    .box_transition:hover {
+      color: #ffffff;
+      background-color: #4f94e2;
+      width: 3.6rem;
+    }
+
+    .btn {
+      margin: 5px;
+      padding: 5px;
+      border-radius: 1.25rem;
+      border: transparent;
+      background-color: #4f94e2;
+      color: #ffffff;
+      transition: transform 2s ease-in-out linear;
+    }
+
+    .btn:hover {
+      transform: scale(0.9);
+    }
+
+    .box_animation {
+      animation-duration: 1s;
+      animation-name: test;
+      animation-iteration-count: 10;
+      animation-delay: 4s;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes zoom-pulse {
+      0% {
+        transform: rotate(-9deg) scale(0.8);
+      }
+      17% {
+        transform: rotate(-3deg) scale(1);
+      }
+      34% {
+        transform: rotate(3deg) scale(1.2);
+      }
+      51% {
+        transform: rotate(9deg) scale(1.4);
+      }
+      68% {
+        transform: rotate(3deg) scale(1.2);
+      }
+      85% {
+        transform: rotate(-3deg) scale(1);
+      }
+      100% {
+        transform: rotate(-9deg) scale(0.8);
+      }
+    }
+
+    @keyframes test {
+      to {
+        transform: scale(0.9);
+      }
+      from {
+        transform: scale(1.5);
+      }
+    }
+  </style>
+</html>

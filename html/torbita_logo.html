@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <!-- external css linking -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- embedded css linking  -->
+    <style>
+      /* css code */
+
+      html {
+        /* property:value ; */
+        background-color: hsl(0, 0%, 0%);
+      }
+      section {
+        position: relative;
+        min-height: 50vh;
+        padding: 0.9375rem;
+        margin: 0;
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        justify-content: center;
+      }
+      #upper {
+        background-color: white;
+        padding-bottom: 0;
+
+        /* width: 30px;
+            max-width: 50px;
+            min-width: 10px; */
+      }
+      #lower {
+        background-color: blueviolet;
+      }
+      .text-red {
+        color: red;
+      }
+      .text-white {
+        color: white;
+      }
+      .text-yellow {
+        color: yellow;
+      }
+      img {
+        /* border: 3px dashed red ; */
+        border-radius: 50%;
+      }
+      header {
+        /* position: absolute;
+          top: 0px;
+          left: 150px; */
+        height: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="upper">
+      <img src="../media/3.png" alt="ball" width="150" height="150" title="" />
+      <header>
+        <!-- inline styling -->
+        <h1 style="color: blueviolet">
+          TORBITA COMPUTER
+          <div>TRAINING SCHOOL</div>
+        </h1>
+        <h4 class="text-red">A service of Torbita Global Service and ....</h4>
+      </header>
+    </section>
+    <section id="lower" class="text-white">
+      <h1 style="font-size: 3rem">
+        BE A COMPUTER
+        <div>PROFESSIONAL</div>
+        <div class="text-yellow">IN WEEKS !</div>
+      </h1>
+    </section>
+  </body>
+</html>
