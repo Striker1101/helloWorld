@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revison</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="cover"></div>
+      <div class="one">Lorem ipsum dolor sit amet.</div>
+      <div class="two">Lorem ipsum dolor sit amet.</div>
+      <div class="three">Lorem ipsum dolor sit amet.</div>
+      <div class="four">Lorem ipsum dolor sit amet.</div>
+      <div class="five">Lorem ipsum dolor sit amet.</div>
+
+      <section id="calculator"></section>
+    </div>
+    <div>
+      <button id="btn">CLick me to start animation</button>
+      <button id="append_btn">CLick me to Append new element</button>
+    </div>
+
+    <script>
+      //js code
+
+      const one = document.querySelector(".one");
+      const btn = document.getElementById("btn");
+      const append_btn = document.getElementById("append_btn");
+
+      //Event handling
+      btn.addEventListener("click", startAnimation);
+      btn.addEventListener("dblclick", startAnimation);
+      append_btn.onclick = appendClass;
+
+      function startAnimation() {
+        //add class to button element
+        one.classList.toggle("boxChange");
+      }
+
+      function appendClass(number) {
+        //append class to container
+        const container = document.getElementById("container");
+
+        //create a div element with class .newElement
+        const newElement = document.createElement("div");
+        newElement.classList.add(`${number}`);
+        newElement.textContent = "Lorem ipsum dolor sit amet.";
+
+        //append
+        container.appendChild(newElement);
+      }
+
+      //varaible
+      // const = constant, let = flexible, var = flexible
+      const name = "ogo"; //memory 3
+      var age = 54; // memory 4
+
+      var numOne = 45; //memory 5
+      let numTwo = 2; // memory 6
+
+      let result = numOne + numTwo;
+
+      const arrElements = ["seven", "eight", "nine", "ten"];
+      for (let i = 0; i <= arrElements.length; i++) {
+        //create 5 new element from the arrElements indexes
+
+        let currentElement = arrElements[i];
+
+        appendClass(currentElement);
+      }
+
+      let num = 1;
+      while (num <= 12) {
+        console.log(2 * num);
+
+        //increment
+        num = num + 1;
+      }
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap");
+      body {
+        background: url("../media/3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #cover {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: -100;
+        background: lightskyblue;
+        opacity: 0.4;
+      }
+      .boxChange {
+        animation-name: colorChanger;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes colorChanger {
+        0% {
+          color: red;
+          transform: scale(1.1);
+        }
+        10% {
+          color: rgb(234, 2, 2);
+          transform: scale(0.9);
+        }
+        90% {
+          color: rgb(35, 1, 1);
+          transform: scale(0.8);
+        }
+        100% {
+          color: rgb(5, 0, 0);
+          transform: scale(0.7);
+        }
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      .two {
+        font-family: "Playwrite BE VLG", cursive;
+      }
+      .four {
+        flex-grow: 3;
+      }
+      .five {
+        padding: 0.3125rem;
+        border: 4px solid red;
+        margin: 0.5625rem;
+        margin-left: 4px;
+      }
+    </style>
+  </body>
+</html>
