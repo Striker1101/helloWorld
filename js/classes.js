@@ -18,13 +18,14 @@ class Car {
         Location: Static or instance
         Visibility: Public or private
      */
-  //constant datas
+  //constant Fields datas
   tires = 4;
   head_light = 2;
-  steering = 1;
+  #steering = 1;
   engine = 1;
   wind_screen = 1;
   side_mirror = 2;
+  NameOfClass = "Car";
 
   //private variables
 
@@ -64,7 +65,8 @@ class Car {
     steering,
     engine,
     wind_screen,
-    side_mirror
+    side_mirror,
+    NameOfClass
   ) {
     // initialize the properties
     this.name = name;
@@ -78,21 +80,36 @@ class Car {
     this.doors = doors;
     this.tires = tires;
     this.head_light = head_light;
-    this.steering = steering;
+    this.#steering = steering;
     this.engine = engine;
     this.wind_screen = wind_screen;
     this.side_mirror = side_mirror;
+    this.NameOfClass = NameOfClass;
+  }
+  //static method
+  static className() {
+    return this.NameOfClass;
   }
 
+  //public method
   runs() {
     return this.name + " is currently driving";
   }
 }
 
 const benz = new Car("benz 360", 2, 2, 150, 4, 4, 2, 4, "black", null, 3);
-console.log(benz);
+// console.log(Car.className());
+
+class Benz extends Car {
+  constructor(name) {
+    super(name);
+  }
+}
+
 //literal string definition
 const nameOne = "john";
+const c350 = new Benz("c350");
+console.log(c350.runs());
 
 //object string definition
 const nameTwo = new String("john");
@@ -100,5 +117,3 @@ const nameTwo = new String("john");
 const arr = new Array(4, 3, 24, 3, 4, 2);
 
 const age = new Number(90);
-
-console.log(benz.runs());
