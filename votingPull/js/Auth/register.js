@@ -6,35 +6,90 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", register);
 
-//add users to local storage
+// Check if users exist in local storage, otherwise initialize it
 if (localStorage.getItem("users") == null) {
-  localStorage.setItem("users", []);
+  localStorage.setItem("users", JSON.stringify([]));
 }
 
 function register(e) {
   e.preventDefault();
 
-  //validation
-  if (password.textContent.length < 4) {
-    reply.textContent = "Please increase your password length";
-    reply.style.cssText = "background-color:red; color:white;";
+  // Validation
+  if (username.value.trim() === "") {
+    reply.textContent = "Please enter a username";
+    reply.style.cssText = "background-color: red; color: white;";
+    return;
   }
 
-  //register user on browser
+  if (email.value.trim() === "" || !email.value.includes("@")) {
+    reply.textContent = "Please enter a valid email";
+    reply.style.cssText = "background-color: red; color: white;";
+    return;
+  }
 
-  //get users from local storage
-  const users = JSON.parse(localStorage.getItem("users"));
+  if (password.value.length < 4) {
+    reply.textContent = "Please increase your password length";
+    reply.style.cssText = "background-color: red; color: white;";
+    return;
+  }
 
-  //create a users data
+  // Get users from local storage
+  let users = localStorage.getItem("users");
+  users = users ? JSON.parse(users) : [];
+
+  // Create a user data
   const data = {
-    username,
-    email,
-    password,
+    username: username.value,
+    email: email.value,
+    password: password.value,
   };
 
-  //push new created user
-  const newUser = users.push(data);
+  // Push the newly created user
+  users.push(data);
 
-  //set to local storage -> user
+  // Set to local storage -> users
   localStorage.setItem("users", JSON.stringify(users));
+
+  // Provide feedback
+  reply.textContent = "User registered successfully";
+  reply.style.cssText = "background-color: green; color: white;";
+
+  // Clear form fields
+  form.reset();
+
+  //redirect to login after 3mins
+  setInterval(() => {
+    window.location.href = "/html/Auth/login.html";
+  }, 3000);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dayElement = document.getElementById("day");
+
+  // Determine the time of day
+  const currentTime = new Date().getHours();
+  let greeting;
+
+  if (currentTime < 12) {
+    greeting = "Good Morning";
+  } else if (currentTime < 18) {
+    greeting = "Good Afternoon";
+  } else {
+    greeting = "Good Evening";
+  }
+
+  // Function to animate each letter
+  function animateText(element, text) {
+    element.innerHTML = ""; // Clear existing text
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement("span");
+      span.className = "letter";
+      span.style.animationDelay = `${i * 0.1}s`; // Delay for each letter
+      span.textContent = text[i];
+      element.appendChild(span);
+    }
+  }
+
+  // Set and animate the greeting message
+  animateText(dayElement, greeting);
+});

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>Caterogies</title>
 
     <!-- fontawesome cdn  -->
     <!-- FontAwesome V6 -->
@@ -44,10 +44,9 @@
 
   <!-- linking css files -->
   <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../../css/auth.css" />
 
-  <!-- linking javascript  -->
-  <script src="../../js/Auth/register.js" defer></script>
+  <!-- linking js script  -->
+  <script src="/js/dashboard/index.js" defer></script>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Voter Pull </a>
@@ -118,64 +117,39 @@
       </div>
     </nav>
     <main>
-      <div id="container">
-        
-        <div class="card">
-          <div class="card-header">Register With Us</div>
-          <div class="card-body">
-            <h5 class="card-title" style="display: flex; gap: 3px">
-              
-              <p id="day">Good Morning</p>
-              <i class="fa fa-smile"></i>
-            </h5>
-            <div id="reply"></div>
-            <form id="form">
-              <div class="form-group">
-                <label for="UserName">User Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  aria-describedby="username"
-                  placeholder="Enter Your Username"
-                  autocomplete="username"
-                  required
-                />
+      <div class="container">
+        <div class="row dashboard-header">
+          <div class="col-md-12">
+            <h1 id="username" class="text-center"></h1>
+          </div>
+        </div>
+        <div class="row dashboard-content">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">View and edit your profile information.</p>
+                <a href="#" class="btn btn-primary">Go to Profile</a>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter email"
-                  autocomplete="email"
-                  required
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
-                >
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Messages</h5>
+                <p class="card-text">Check your messages and notifications.</p>
+                <a href="#" class="btn btn-primary">View Messages</a>
               </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Password"
-                  minlength="4"
-                  required
-                />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Settings</h5>
+                <p class="card-text">Configure your account settings.</p>
+                <a href="#" class="btn btn-primary">Go to Settings</a>
               </div>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-                <div class="m-3">
-                  Already have an account!! cool
-                  <a href="/html/Auth/login.html">Click Me</a>
-                </div>
-           
-            </form>
+            </div>
           </div>
         </div>
       </div>
