@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      const objStudent = {
+        name: "john",
+        age: 20,
+      };
+      const objStudentTwo = {
+        name: "sammy",
+        age: 45,
+      };
+
+      //destruing an object
+      const { name, age } = objStudent;
+
+      console.log(name, age);
+
+      const arrStudent = ["john", 20];
+      const arrStudentTwo = ["sammy", 45];
+
+      const [john] = arrStudent;
+      //destructing an array
+      console.log(john);
+
+      const spread = [...arrStudent, ...arrStudentTwo];
+      const spreadObj = { ...objStudent, ...objStudentTwo };
+      console.log(spread, spreadObj);
+    </script>
+  </body>
+</html>
